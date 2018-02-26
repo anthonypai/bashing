@@ -24,17 +24,17 @@ outFilePath="/root/DMI_"$SYSN".txt"
 echo "Saving DMI INFO to "$outFilePath
 
 # Registry into DMI #
-/root/SSGS/sum -c GetDMIinfo --file "$outFilePath"
-/root/SSGS/sum -c editdmiinfo --file "$outFilePath" --shn SYSN --value "$SYSN"
-/root/SSGS/sum -c editdmiinfo --file "$outFilePath" --shn SYPD --value "$SYPD"
-/root/SSGS/sum -c editdmiinfo --file "$outFilePath" --shn BBSN --value "$BBSN"
+./sum -c GetDMIinfo --file "$outFilePath"
+./sum -c editdmiinfo --file "$outFilePath" --shn SYSN --value "$SYSN"
+./sum -c editdmiinfo --file "$outFilePath" --shn SYPD --value "$SYPD"
+./sum -c editdmiinfo --file "$outFilePath" --shn BBSN --value "$BBSN"
 
 # Uploading new DMI information #
-/root/SSGS/sum -c ChangeDmiInfo --file /tmp/dmi.txt
+./sum -c ChangeDmiInfo --file /tmp/dmi.txt
 
 
 ## STEP 3: [REBOOT] MESSAGE before rebooting the system ##
-read -p "Please press ENTER to REBOOT the system and REMOVE the DMIeditor USB drive. Have a great Day !!! Supermicro Strategic Global Service department." 
+read -p "Please press ENTER to REBOOT the system and REMOVE the DMIeditor USB drive. Have a great Day !!!" 
 
 # Reboot #
 reboot
